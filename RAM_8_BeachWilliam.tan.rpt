@@ -1,0 +1,920 @@
+Classic Timing Analyzer report for RAM_8_BeachWilliam
+Thu Dec 08 17:15:42 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'CLOCK'
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                               ;
++------------------------------+-------+---------------+----------------------------------+------------------+-------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From             ; To                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------+-------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.100 ns                         ; LOAD             ; RAM_SELECTION~147 ; --         ; CLOCK    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 10.800 ns                        ; RAM_SELECTION~69 ; Q[1]              ; CLOCK      ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 8.900 ns                         ; ADDRESS[2]       ; Q[0]              ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.200 ns                        ; D[0]             ; RAM_SELECTION~132 ; --         ; CLOCK    ; 0            ;
+; Clock Setup: 'CLOCK'         ; N/A   ; None          ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~82 ; RAM_SELECTION~82  ; CLOCK      ; CLOCK    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                  ;                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------+-------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM3256AQC208-7    ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLOCK           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLOCK'                                                                                                                                                                         ;
++-------+----------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)             ; From              ; To                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+----------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~21  ; RAM_SELECTION~21  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~23  ; RAM_SELECTION~23  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~24  ; RAM_SELECTION~24  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~26  ; RAM_SELECTION~26  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~28  ; RAM_SELECTION~28  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~30  ; RAM_SELECTION~30  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~32  ; RAM_SELECTION~32  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~34  ; RAM_SELECTION~34  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~37  ; RAM_SELECTION~37  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~39  ; RAM_SELECTION~39  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~40  ; RAM_SELECTION~40  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~42  ; RAM_SELECTION~42  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~44  ; RAM_SELECTION~44  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~46  ; RAM_SELECTION~46  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~48  ; RAM_SELECTION~48  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~50  ; RAM_SELECTION~50  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~53  ; RAM_SELECTION~53  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~58  ; RAM_SELECTION~58  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~60  ; RAM_SELECTION~60  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~62  ; RAM_SELECTION~62  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~64  ; RAM_SELECTION~64  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~66  ; RAM_SELECTION~66  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~69  ; RAM_SELECTION~69  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~74  ; RAM_SELECTION~74  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~76  ; RAM_SELECTION~76  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~78  ; RAM_SELECTION~78  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~80  ; RAM_SELECTION~80  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 125.00 MHz ( period = 8.000 ns ) ; RAM_SELECTION~82  ; RAM_SELECTION~82  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.700 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~20  ; RAM_SELECTION~20  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~22  ; RAM_SELECTION~22  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~25  ; RAM_SELECTION~25  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~27  ; RAM_SELECTION~27  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~29  ; RAM_SELECTION~29  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~31  ; RAM_SELECTION~31  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~33  ; RAM_SELECTION~33  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~35  ; RAM_SELECTION~35  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~36  ; RAM_SELECTION~36  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~38  ; RAM_SELECTION~38  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~41  ; RAM_SELECTION~41  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~43  ; RAM_SELECTION~43  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~45  ; RAM_SELECTION~45  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~47  ; RAM_SELECTION~47  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~49  ; RAM_SELECTION~49  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~51  ; RAM_SELECTION~51  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~52  ; RAM_SELECTION~52  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~54  ; RAM_SELECTION~54  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~55  ; RAM_SELECTION~55  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~56  ; RAM_SELECTION~56  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~57  ; RAM_SELECTION~57  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~59  ; RAM_SELECTION~59  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~61  ; RAM_SELECTION~61  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~63  ; RAM_SELECTION~63  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~65  ; RAM_SELECTION~65  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~67  ; RAM_SELECTION~67  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~68  ; RAM_SELECTION~68  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~70  ; RAM_SELECTION~70  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~71  ; RAM_SELECTION~71  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~72  ; RAM_SELECTION~72  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~73  ; RAM_SELECTION~73  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~75  ; RAM_SELECTION~75  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~77  ; RAM_SELECTION~77  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~79  ; RAM_SELECTION~79  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~81  ; RAM_SELECTION~81  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~83  ; RAM_SELECTION~83  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~84  ; RAM_SELECTION~84  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~85  ; RAM_SELECTION~85  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~86  ; RAM_SELECTION~86  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~87  ; RAM_SELECTION~87  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~88  ; RAM_SELECTION~88  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~89  ; RAM_SELECTION~89  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~90  ; RAM_SELECTION~90  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~91  ; RAM_SELECTION~91  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~92  ; RAM_SELECTION~92  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~93  ; RAM_SELECTION~93  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~94  ; RAM_SELECTION~94  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~95  ; RAM_SELECTION~95  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~96  ; RAM_SELECTION~96  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~97  ; RAM_SELECTION~97  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~98  ; RAM_SELECTION~98  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~99  ; RAM_SELECTION~99  ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~100 ; RAM_SELECTION~100 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~101 ; RAM_SELECTION~101 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~102 ; RAM_SELECTION~102 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~103 ; RAM_SELECTION~103 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~104 ; RAM_SELECTION~104 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~105 ; RAM_SELECTION~105 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~106 ; RAM_SELECTION~106 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~107 ; RAM_SELECTION~107 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~108 ; RAM_SELECTION~108 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~109 ; RAM_SELECTION~109 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~110 ; RAM_SELECTION~110 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~111 ; RAM_SELECTION~111 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~112 ; RAM_SELECTION~112 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~113 ; RAM_SELECTION~113 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~114 ; RAM_SELECTION~114 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~115 ; RAM_SELECTION~115 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~116 ; RAM_SELECTION~116 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~117 ; RAM_SELECTION~117 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~118 ; RAM_SELECTION~118 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~119 ; RAM_SELECTION~119 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~120 ; RAM_SELECTION~120 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~121 ; RAM_SELECTION~121 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~122 ; RAM_SELECTION~122 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~123 ; RAM_SELECTION~123 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~124 ; RAM_SELECTION~124 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~125 ; RAM_SELECTION~125 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~126 ; RAM_SELECTION~126 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~127 ; RAM_SELECTION~127 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~128 ; RAM_SELECTION~128 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~129 ; RAM_SELECTION~129 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~130 ; RAM_SELECTION~130 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~131 ; RAM_SELECTION~131 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~132 ; RAM_SELECTION~132 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~133 ; RAM_SELECTION~133 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~134 ; RAM_SELECTION~134 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~135 ; RAM_SELECTION~135 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~136 ; RAM_SELECTION~136 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~137 ; RAM_SELECTION~137 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~138 ; RAM_SELECTION~138 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~139 ; RAM_SELECTION~139 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~140 ; RAM_SELECTION~140 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~141 ; RAM_SELECTION~141 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~142 ; RAM_SELECTION~142 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~143 ; RAM_SELECTION~143 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~144 ; RAM_SELECTION~144 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~145 ; RAM_SELECTION~145 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~146 ; RAM_SELECTION~146 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns ) ; RAM_SELECTION~147 ; RAM_SELECTION~147 ; CLOCK      ; CLOCK    ; None                        ; None                      ; 4.600 ns                ;
++-------+----------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+-------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From       ; To                ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+-------------------+----------+
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~20  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~21  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~22  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~23  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~24  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~25  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~26  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~27  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~28  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~29  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~30  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~31  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~32  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~33  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~34  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~35  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~36  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~37  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~38  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~39  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~40  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~41  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~42  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~43  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~44  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~45  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~46  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~47  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~48  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~49  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~50  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~51  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~52  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~53  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~54  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~55  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~56  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~57  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~58  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~59  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~60  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~61  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~62  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~63  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~64  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~65  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~66  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~67  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~68  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~69  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~70  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~71  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~72  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~73  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~74  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~75  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~76  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~77  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~78  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~79  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~80  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~81  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~82  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~83  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~84  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~85  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~86  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~87  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~88  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~89  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~90  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~91  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~92  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~93  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~94  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~95  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~96  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~97  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~98  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~99  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~100 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~101 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~102 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~103 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~104 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~105 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~106 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~107 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~108 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~109 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~110 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~111 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~112 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~113 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~114 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~115 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~116 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~117 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~118 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~119 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~120 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~121 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~122 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~123 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~124 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~125 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~126 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~127 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~128 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~129 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~130 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~131 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~132 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~133 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~134 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~135 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~136 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~137 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~138 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~139 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~140 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~141 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~142 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~143 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~144 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~145 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~146 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[2] ; RAM_SELECTION~147 ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~20  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~21  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~22  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~23  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~24  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~25  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~26  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~27  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~28  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~29  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~30  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~31  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~32  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~33  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~34  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~35  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~36  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~37  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~38  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~39  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~40  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~41  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~42  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~43  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~44  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~45  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~46  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~47  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~48  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~49  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~50  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~51  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~52  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~53  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~54  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~55  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~56  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~57  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~58  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~59  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~60  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~61  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~62  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~63  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~64  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~65  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~66  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~67  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~68  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~69  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~70  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~71  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~72  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~73  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~74  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~75  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~76  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~77  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~78  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~79  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~80  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~81  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~82  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~83  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~84  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~85  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~86  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~87  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~88  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~89  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~90  ; CLOCK    ;
+; N/A                                     ; None                                                ; 6.100 ns   ; ADDRESS[1] ; RAM_SELECTION~91  ; CLOCK    ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;            ;                   ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+-------------------+----------+
+
+
++----------------------------------------------------------------------------+
+; tco                                                                        ;
++-------+--------------+------------+-------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To    ; From Clock ;
++-------+--------------+------------+-------------------+-------+------------+
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~34  ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~66  ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~82  ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~32  ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~64  ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~80  ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~30  ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~62  ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~78  ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~28  ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~60  ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~76  ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~26  ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~58  ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~74  ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~24  ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~23  ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~21  ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~53  ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.800 ns  ; RAM_SELECTION~69  ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~35  ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~67  ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~83  ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~33  ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~65  ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~81  ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~31  ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~63  ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~79  ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~29  ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~61  ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~77  ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~27  ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~59  ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~75  ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~25  ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~57  ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~73  ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~56  ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~72  ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~55  ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~71  ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~22  ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~54  ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~70  ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~20  ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~52  ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.700 ns  ; RAM_SELECTION~68  ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~50  ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~48  ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~46  ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~44  ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~42  ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~40  ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~39  ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.300 ns  ; RAM_SELECTION~37  ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~51  ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~99  ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~115 ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~131 ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~147 ; Q[15] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~98  ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~114 ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~130 ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~146 ; Q[14] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~49  ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~97  ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~113 ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~129 ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~145 ; Q[13] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~96  ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~112 ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~128 ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~144 ; Q[12] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~47  ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~95  ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~111 ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~127 ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~143 ; Q[11] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~94  ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~110 ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~126 ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~142 ; Q[10] ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~45  ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~93  ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~109 ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~125 ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~141 ; Q[9]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~92  ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~108 ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~124 ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~140 ; Q[8]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~43  ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~91  ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~107 ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~123 ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~139 ; Q[7]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~90  ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~106 ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~122 ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~138 ; Q[6]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~41  ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~89  ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~105 ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~121 ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~137 ; Q[5]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~88  ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~104 ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~120 ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~136 ; Q[4]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~87  ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~103 ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~119 ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~135 ; Q[3]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~38  ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~86  ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~102 ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~118 ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~134 ; Q[2]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~85  ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~101 ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~117 ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~133 ; Q[1]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~36  ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~84  ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~100 ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~116 ; Q[0]  ; CLOCK      ;
+; N/A   ; None         ; 10.200 ns  ; RAM_SELECTION~132 ; Q[0]  ; CLOCK      ;
++-------+--------------+------------+-------------------+-------+------------+
+
+
++------------------------------------------------------------------+
+; tpd                                                              ;
++-------+-------------------+-----------------+------------+-------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From       ; To    ;
++-------+-------------------+-----------------+------------+-------+
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[15] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[15] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[15] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[14] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[14] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[14] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[13] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[13] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[13] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[12] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[12] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[12] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[11] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[11] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[11] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[10] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[10] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[10] ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[9]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[9]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[9]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[8]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[8]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[8]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[7]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[7]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[7]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[6]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[6]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[6]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[5]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[5]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[5]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[4]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[4]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[4]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[3]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[3]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[3]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[2]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[2]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[2]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[1]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[1]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[1]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[0] ; Q[0]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[1] ; Q[0]  ;
+; N/A   ; None              ; 8.900 ns        ; ADDRESS[2] ; Q[0]  ;
++-------+-------------------+-----------------+------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+-------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From       ; To                ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+-------------------+----------+
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~35  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~51  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~67  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~83  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~99  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~115 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~131 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[15]      ; RAM_SELECTION~147 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~33  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~49  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~65  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~81  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~97  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~113 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~129 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[13]      ; RAM_SELECTION~145 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~31  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~47  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~63  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~79  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~95  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~111 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~127 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[11]      ; RAM_SELECTION~143 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~29  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~45  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~61  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~77  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~93  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~109 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~125 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[9]       ; RAM_SELECTION~141 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~27  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~43  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~59  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~75  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~91  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~107 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~123 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[7]       ; RAM_SELECTION~139 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~25  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~41  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~57  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~73  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~89  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~105 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~121 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[5]       ; RAM_SELECTION~137 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~22  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~38  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~54  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~70  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~86  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~102 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~118 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[2]       ; RAM_SELECTION~134 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~20  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~36  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~52  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~68  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~84  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~100 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~116 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.200 ns ; D[0]       ; RAM_SELECTION~132 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~34  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~50  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~66  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~82  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~98  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~114 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~130 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[14]      ; RAM_SELECTION~146 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~32  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~48  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~64  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~80  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~96  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~112 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~128 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[12]      ; RAM_SELECTION~144 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~30  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~46  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~62  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~78  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~94  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~110 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~126 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[10]      ; RAM_SELECTION~142 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~26  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~42  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~58  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~74  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~90  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~106 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~122 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[6]       ; RAM_SELECTION~138 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~24  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~40  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~56  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~72  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~88  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~104 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~120 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[4]       ; RAM_SELECTION~136 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~23  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~39  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~55  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~71  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~87  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~103 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~119 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[3]       ; RAM_SELECTION~135 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~21  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~37  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~53  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~69  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~85  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~101 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~117 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.300 ns ; D[1]       ; RAM_SELECTION~133 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~28  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~44  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~60  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~76  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~92  ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~108 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~124 ; CLOCK    ;
+; N/A                                     ; None                                                ; -2.400 ns ; D[8]       ; RAM_SELECTION~140 ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~20  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~21  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~22  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~23  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~24  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~25  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~26  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~27  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~28  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~29  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~30  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~31  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~32  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~33  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~34  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~35  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~36  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~37  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~38  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~39  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~40  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~41  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~42  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~43  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~44  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~45  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~46  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~47  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~48  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~49  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~50  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~51  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~52  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~53  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~54  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~55  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~56  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~57  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~58  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~59  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~60  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~61  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~62  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~63  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~64  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~65  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~66  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~67  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~68  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~69  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~70  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~71  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~72  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~73  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~74  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~75  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~76  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~77  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~78  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~79  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~80  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~81  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~82  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~83  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~84  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~85  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~86  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~87  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~88  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~89  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~90  ; CLOCK    ;
+; N/A                                     ; None                                                ; -3.100 ns ; ADDRESS[2] ; RAM_SELECTION~91  ; CLOCK    ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;            ;                   ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+------------+-------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Dec 08 17:15:42 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off RAM_8_BeachWilliam -c RAM_8_BeachWilliam
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis does not support the analysis of latches as synchronous elements for the currently selected device family
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLOCK" is an undefined clock
+Info: Clock "CLOCK" has Internal fmax of 125.0 MHz between source register "RAM_SELECTION~21" and destination register "RAM_SELECTION~21" (period= 8.0 ns)
+    Info: + Longest register to register delay is 4.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5; Fanout = 4; REG Node = 'RAM_SELECTION~21'
+        Info: 2: + IC(2.500 ns) + CELL(2.200 ns) = 4.700 ns; Loc. = LC5; Fanout = 4; REG Node = 'RAM_SELECTION~21'
+        Info: Total cell delay = 2.200 ns ( 46.81 % )
+        Info: Total interconnect delay = 2.500 ns ( 53.19 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "CLOCK" to destination register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.800 ns) = 1.800 ns; Loc. = PIN_184; Fanout = 128; CLK Node = 'CLOCK'
+            Info: 2: + IC(0.000 ns) + CELL(0.600 ns) = 2.400 ns; Loc. = LC5; Fanout = 4; REG Node = 'RAM_SELECTION~21'
+            Info: Total cell delay = 2.400 ns ( 100.00 % )
+        Info: - Longest clock path from clock "CLOCK" to source register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.800 ns) = 1.800 ns; Loc. = PIN_184; Fanout = 128; CLK Node = 'CLOCK'
+            Info: 2: + IC(0.000 ns) + CELL(0.600 ns) = 2.400 ns; Loc. = LC5; Fanout = 4; REG Node = 'RAM_SELECTION~21'
+            Info: Total cell delay = 2.400 ns ( 100.00 % )
+    Info: + Micro clock to output delay of source is 1.200 ns
+    Info: + Micro setup delay of destination is 2.100 ns
+Info: tsu for register "RAM_SELECTION~20" (data pin = "ADDRESS[2]", clock pin = "CLOCK") is 6.100 ns
+    Info: + Longest pin to register delay is 6.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.900 ns) = 0.900 ns; Loc. = PIN_91; Fanout = 384; PIN Node = 'ADDRESS[2]'
+        Info: 2: + IC(3.300 ns) + CELL(2.200 ns) = 6.400 ns; Loc. = LC11; Fanout = 4; REG Node = 'RAM_SELECTION~20'
+        Info: Total cell delay = 3.100 ns ( 48.44 % )
+        Info: Total interconnect delay = 3.300 ns ( 51.56 % )
+    Info: + Micro setup delay of destination is 2.100 ns
+    Info: - Shortest clock path from clock "CLOCK" to destination register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.800 ns) = 1.800 ns; Loc. = PIN_184; Fanout = 128; CLK Node = 'CLOCK'
+        Info: 2: + IC(0.000 ns) + CELL(0.600 ns) = 2.400 ns; Loc. = LC11; Fanout = 4; REG Node = 'RAM_SELECTION~20'
+        Info: Total cell delay = 2.400 ns ( 100.00 % )
+Info: tco from clock "CLOCK" to destination pin "Q[14]" through register "RAM_SELECTION~34" is 10.800 ns
+    Info: + Longest clock path from clock "CLOCK" to source register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.800 ns) = 1.800 ns; Loc. = PIN_184; Fanout = 128; CLK Node = 'CLOCK'
+        Info: 2: + IC(0.000 ns) + CELL(0.600 ns) = 2.400 ns; Loc. = LC146; Fanout = 4; REG Node = 'RAM_SELECTION~34'
+        Info: Total cell delay = 2.400 ns ( 100.00 % )
+    Info: + Micro clock to output delay of source is 1.200 ns
+    Info: + Longest register to pin delay is 7.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC146; Fanout = 4; REG Node = 'RAM_SELECTION~34'
+        Info: 2: + IC(2.500 ns) + CELL(1.000 ns) = 3.500 ns; Loc. = LC114; Fanout = 1; COMB Node = 'RAM_SELECTION~1532'
+        Info: 3: + IC(0.000 ns) + CELL(2.500 ns) = 6.000 ns; Loc. = LC115; Fanout = 1; COMB Node = 'RAM_SELECTION~1469'
+        Info: 4: + IC(0.000 ns) + CELL(1.200 ns) = 7.200 ns; Loc. = PIN_80; Fanout = 0; PIN Node = 'Q[14]'
+        Info: Total cell delay = 4.700 ns ( 65.28 % )
+        Info: Total interconnect delay = 2.500 ns ( 34.72 % )
+Info: Longest tpd from source pin "ADDRESS[0]" to destination pin "Q[15]" is 8.900 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.900 ns) = 0.900 ns; Loc. = PIN_129; Fanout = 384; PIN Node = 'ADDRESS[0]'
+    Info: 2: + IC(3.300 ns) + CELL(1.000 ns) = 5.200 ns; Loc. = LC130; Fanout = 1; COMB Node = 'RAM_SELECTION~1536'
+    Info: 3: + IC(0.000 ns) + CELL(2.500 ns) = 7.700 ns; Loc. = LC131; Fanout = 1; COMB Node = 'RAM_SELECTION~1475'
+    Info: 4: + IC(0.000 ns) + CELL(1.200 ns) = 8.900 ns; Loc. = PIN_196; Fanout = 0; PIN Node = 'Q[15]'
+    Info: Total cell delay = 5.600 ns ( 62.92 % )
+    Info: Total interconnect delay = 3.300 ns ( 37.08 % )
+Info: th for register "RAM_SELECTION~35" (data pin = "D[15]", clock pin = "CLOCK") is -2.200 ns
+    Info: + Longest clock path from clock "CLOCK" to destination register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.800 ns) = 1.800 ns; Loc. = PIN_184; Fanout = 128; CLK Node = 'CLOCK'
+        Info: 2: + IC(0.000 ns) + CELL(0.600 ns) = 2.400 ns; Loc. = LC140; Fanout = 4; REG Node = 'RAM_SELECTION~35'
+        Info: Total cell delay = 2.400 ns ( 100.00 % )
+    Info: + Micro hold delay of destination is 0.900 ns
+    Info: - Shortest pin to register delay is 5.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.900 ns) = 0.900 ns; Loc. = PIN_56; Fanout = 16; PIN Node = 'D[15]'
+        Info: 2: + IC(2.400 ns) + CELL(2.200 ns) = 5.500 ns; Loc. = LC140; Fanout = 4; REG Node = 'RAM_SELECTION~35'
+        Info: Total cell delay = 3.100 ns ( 56.36 % )
+        Info: Total interconnect delay = 2.400 ns ( 43.64 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 342 megabytes
+    Info: Processing ended: Thu Dec 08 17:15:42 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

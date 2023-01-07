@@ -1,0 +1,772 @@
+Fitter report for RAM_8_BeachWilliam
+Thu Dec 08 17:15:40 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Pin-Out File
+  5. Fitter Resource Usage Summary
+  6. Input Pins
+  7. Output Pins
+  8. All Package Pins
+  9. I/O Standard
+ 10. Dedicated Inputs I/O
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Control Signals
+ 14. Global & Other Fast Signals
+ 15. Non-Global High Fan-Out Signals
+ 16. Interconnect Usage Summary
+ 17. LAB External Interconnect
+ 18. LAB Macrocells
+ 19. Parallel Expander
+ 20. Logic Cell Interconnection
+ 21. Fitter Device Options
+ 22. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; Fitter Summary                                                       ;
++-----------------------+----------------------------------------------+
+; Fitter Status         ; Successful - Thu Dec 08 17:15:40 2022        ;
+; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name         ; RAM_8_BeachWilliam                           ;
+; Top-level Entity Name ; RAM_8_BeachWilliam                           ;
+; Family                ; MAX3000A                                     ;
+; Device                ; EPM3256AQC208-7                              ;
+; Timing Models         ; Final                                        ;
+; Total macrocells      ; 160 / 256 ( 63 % )                           ;
+; Total pins            ; 41 / 158 ( 26 % )                            ;
++-----------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                              ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM3256AQC208-7 ;               ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Use TimeQuest Timing Analyzer                                              ; Off             ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off             ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off             ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; On              ; On            ;
+; Limit to One Fitting Attempt                                               ; Off             ; Off           ;
+; Fitter Initial Placement Seed                                              ; 1               ; 1             ;
+; Slow Slew Rate                                                             ; Off             ; Off           ;
+; Fitter Effort                                                              ; Auto Fit        ; Auto Fit      ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off             ; Off           ;
+; Use Best Effort Settings for Compilation                                   ; Off             ; Off           ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in C:/Users/public1/Lab3-BeachWilliam/RAM_8_BeachWilliam.pin.
+
+
++--------------------------------------------------------+
+; Fitter Resource Usage Summary                          ;
++-----------------------------------+--------------------+
+; Resource                          ; Usage              ;
++-----------------------------------+--------------------+
+; Logic cells                       ; 160 / 256 ( 63 % ) ;
+; Registers                         ; 128 / 256 ( 50 % ) ;
+; Number of pterms used             ; 384                ;
+; User inserted logic elements      ; 0                  ;
+; I/O pins                          ; 41 / 158 ( 26 % )  ;
+;     -- Clock pins                 ; 1 / 2 ( 50 % )     ;
+;     -- Dedicated input pins       ; 0 / 2 ( 0 % )      ;
+; Global signals                    ; 1                  ;
+; Shareable expanders               ; 0 / 256 ( 0 % )    ;
+; Parallel expanders                ; 16 / 240 ( 7 % )   ;
+; Cells using turbo bit             ; 160 / 256 ( 63 % ) ;
+; Maximum fan-out node              ; ADDRESS[0]         ;
+; Maximum fan-out                   ; 160                ;
+; Highest non-global fan-out signal ; ADDRESS[0]         ;
+; Highest non-global fan-out        ; 160                ;
+; Total fan-out                     ; 1152               ;
+; Average fan-out                   ; 5.73               ;
++-----------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                      ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; Name       ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; I/O Standard ; Location assigned by ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; ADDRESS[0] ; 129   ; --       ; 7   ; 160                   ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; ADDRESS[1] ; 28    ; --       ; 11  ; 160                   ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; ADDRESS[2] ; 91    ; --       ; 8   ; 160                   ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; CLOCK      ; 184   ; --       ; --  ; 128                   ; 0                  ; yes    ; 3.3-V LVTTL  ; Fitter               ;
+; D[0]       ; 102   ; --       ; 4   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[10]      ; 151   ; --       ; 2   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[11]      ; 139   ; --       ; 6   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[12]      ; 140   ; --       ; 6   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[13]      ; 117   ; --       ; 3   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[14]      ; 55    ; --       ; 16  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[15]      ; 56    ; --       ; 16  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[1]       ; 66    ; --       ; 12  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[2]       ; 167   ; --       ; 1   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[3]       ; 118   ; --       ; 3   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[4]       ; 39    ; --       ; 15  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[5]       ; 17    ; --       ; 10  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[6]       ; 178   ; --       ; 5   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[7]       ; 67    ; --       ; 12  ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[8]       ; 187   ; --       ; 9   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; D[9]       ; 172   ; --       ; 5   ; 8                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; LOAD       ; 198   ; --       ; 13  ; 128                   ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                               ;
++-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name  ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Q[0]  ; 154   ; --       ; 1   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[10] ; 132   ; --       ; 6   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[11] ; 120   ; --       ; 7   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[12] ; 121   ; --       ; 7   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[13] ; 81    ; --       ; 8   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[14] ; 80    ; --       ; 8   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[15] ; 196   ; --       ; 9   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[1]  ; 146   ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[2]  ; 144   ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[3]  ; 110   ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[4]  ; 109   ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[5]  ; 93    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[6]  ; 95    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[7]  ; 170   ; --       ; 5   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[8]  ; 169   ; --       ; 5   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
+; Q[9]  ; 131   ; --       ; 6   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; Fitter               ; 10 pF ; -                    ; -                   ;
++-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 2        ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 3        ; 167        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 4        ; 166        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 5        ; 165        ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 6        ; 164        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 7        ; 163        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 8        ; 162        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 9        ; 161        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 10       ; 160        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 11       ; 159        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 12       ; 158        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 13       ; 157        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 14       ; 156        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 15       ; 155        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 16       ; 154        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 17       ; 153        ; --       ; D[5]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 18       ; 152        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 19       ; 151        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 20       ; 150        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 21       ; 149        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 22       ; 148        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 23       ; 147        ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 24       ; 146        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 25       ; 145        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 26       ; 144        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 27       ; 143        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 28       ; 142        ; --       ; ADDRESS[1]     ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 29       ; 141        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 30       ; 140        ; --       ; TCK            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 31       ; 139        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 32       ; 138        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 33       ; 137        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 34       ; 136        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 35       ; 135        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 36       ; 134        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 37       ; 133        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 38       ; 132        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 39       ; 131        ; --       ; D[4]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 40       ; 130        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 41       ; 129        ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 42       ; 128        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 43       ; 127        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 44       ; 126        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 45       ; 125        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 46       ; 124        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 47       ; 123        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 48       ; 122        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 49       ; 121        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 50       ; 120        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 51       ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 52       ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 53       ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 54       ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 55       ; 119        ; --       ; D[14]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 56       ; 118        ; --       ; D[15]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 57       ; 117        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 58       ; 116        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 59       ; 115        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 60       ; 114        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 61       ; 113        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 62       ; 112        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 63       ; 111        ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 64       ; 110        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 65       ; 109        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 66       ; 108        ; --       ; D[1]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 67       ; 107        ; --       ; D[7]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 68       ; 106        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 69       ; 105        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 70       ; 104        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 71       ; 103        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 72       ; 102        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 73       ; 101        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 74       ; 100        ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 75       ; 99         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 76       ; 98         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 77       ; 97         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 78       ; 96         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 79       ; 95         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 80       ; 94         ; --       ; Q[14]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 81       ; 93         ; --       ; Q[13]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 82       ; 92         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 83       ; 91         ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 84       ; 90         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 85       ; 89         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 86       ; 88         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 87       ; 87         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 88       ; 86         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 89       ; 85         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 90       ; 84         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 91       ; 83         ; --       ; ADDRESS[2]     ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 92       ; 82         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 93       ; 81         ; --       ; Q[5]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 94       ; 80         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 95       ; 79         ; --       ; Q[6]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 96       ; 78         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 97       ; 77         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 98       ; 76         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 99       ; 75         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 100      ; 74         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 101      ; 73         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 102      ; 72         ; --       ; D[0]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 103      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 104      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 105      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 106      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 107      ; 71         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 108      ; 70         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 109      ; 69         ; --       ; Q[4]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 110      ; 68         ; --       ; Q[3]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 111      ; 67         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 112      ; 66         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 113      ; 65         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 114      ; 64         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 115      ; 63         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 116      ; 62         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 117      ; 61         ; --       ; D[13]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 118      ; 60         ; --       ; D[3]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 119      ; 59         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 120      ; 58         ; --       ; Q[11]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 121      ; 57         ; --       ; Q[12]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 122      ; 56         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 123      ; 55         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 124      ; 54         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 125      ; 53         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 126      ; 52         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 127      ; 51         ; --       ; TMS            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 128      ; 50         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 129      ; 49         ; --       ; ADDRESS[0]     ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 130      ; 48         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 131      ; 47         ; --       ; Q[9]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 132      ; 46         ; --       ; Q[10]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 133      ; 45         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 134      ; 44         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 135      ; 43         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 136      ; 42         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 137      ; 41         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 138      ; 40         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 139      ; 39         ; --       ; D[11]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 140      ; 38         ; --       ; D[12]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 141      ; 37         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 142      ; 36         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 143      ; 35         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 144      ; 34         ; --       ; Q[2]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 145      ; 33         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 146      ; 32         ; --       ; Q[1]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 147      ; 31         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 148      ; 30         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 149      ; 29         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 150      ; 28         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 151      ; 27         ; --       ; D[10]          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 152      ; 26         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 153      ; 25         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 154      ; 24         ; --       ; Q[0]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 155      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 156      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 157      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 158      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 159      ; 23         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 160      ; 22         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 161      ; 21         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 162      ; 20         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 163      ; 19         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 164      ; 18         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 165      ; 17         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 166      ; 16         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 167      ; 15         ; --       ; D[2]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 168      ; 14         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 169      ; 13         ; --       ; Q[8]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 170      ; 12         ; --       ; Q[7]           ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 171      ; 11         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 172      ; 10         ; --       ; D[9]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 173      ; 9          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 174      ; 8          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 175      ; 7          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 176      ; 6          ; --       ; TDI            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 177      ; 5          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 178      ; 4          ; --       ; D[6]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 179      ; 3          ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 180      ; 2          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 181      ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 182      ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 183      ; 191        ; --       ; GND+           ;        ;              ;         ;                 ;
+; 184      ; 190        ; --       ; CLOCK          ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 185      ; 189        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 186      ; 188        ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 187      ; 187        ; --       ; D[8]           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 188      ; 186        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 189      ; 185        ; --       ; TDO            ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 190      ; 184        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 191      ; 183        ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 192      ; 182        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 193      ; 181        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 194      ; 180        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 195      ; 179        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 196      ; 178        ; --       ; Q[15]          ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 197      ; 177        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 198      ; 176        ; --       ; LOAD           ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 199      ; 175        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 200      ; 174        ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 201      ; 173        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 202      ; 172        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 203      ; 171        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 204      ; 170        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 205      ; 169        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 206      ; 168        ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 207      ;            ;          ; NC             ;        ;              ;         ;                 ;
+; 208      ;            ;          ; NC             ;        ;              ;         ;                 ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; 3.3-V LVTTL  ; -          ; 1                    ; 0                 ; 0                 ; 1     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Dedicated Inputs I/O                                                ;
++-------+-------+-------+-------+--------------+------------+---------+
+; Name  ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++-------+-------+-------+-------+--------------+------------+---------+
+; CLOCK ; 184   ; Input ; --    ; 3.3-V LVTTL  ; -          ; 0 mA    ;
++-------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; 3.3-V PCI    ; 10 pF ; 25 Ohm (Parallel)      ;
+; 2.5 V        ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |RAM_8_BeachWilliam        ; 160        ; 41   ; |RAM_8_BeachWilliam ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++---------------------------------------------------------------------------------------+
+; Control Signals                                                                       ;
++-------+----------+---------+-------+--------+----------------------+------------------+
+; Name  ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ;
++-------+----------+---------+-------+--------+----------------------+------------------+
+; CLOCK ; PIN_184  ; 128     ; Clock ; yes    ; On                   ; --               ;
++-------+----------+---------+-------+--------+----------------------+------------------+
+
+
++----------------------------------------------------------------------+
+; Global & Other Fast Signals                                          ;
++-------+----------+---------+----------------------+------------------+
+; Name  ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------+----------+---------+----------------------+------------------+
+; CLOCK ; PIN_184  ; 128     ; On                   ; --               ;
++-------+----------+---------+----------------------+------------------+
+
+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++-------------------+-------------+
+; Name              ; Fan-Out     ;
++-------------------+-------------+
+; ADDRESS[2]        ; 160         ;
+; ADDRESS[1]        ; 160         ;
+; ADDRESS[0]        ; 160         ;
+; LOAD              ; 128         ;
+; D[15]             ; 8           ;
+; D[14]             ; 8           ;
+; D[13]             ; 8           ;
+; D[12]             ; 8           ;
+; D[11]             ; 8           ;
+; D[10]             ; 8           ;
+; D[9]              ; 8           ;
+; D[8]              ; 8           ;
+; D[7]              ; 8           ;
+; D[6]              ; 8           ;
+; D[5]              ; 8           ;
+; D[4]              ; 8           ;
+; D[3]              ; 8           ;
+; D[2]              ; 8           ;
+; D[1]              ; 8           ;
+; D[0]              ; 8           ;
+; RAM_SELECTION~147 ; 2           ;
+; RAM_SELECTION~146 ; 2           ;
+; RAM_SELECTION~145 ; 2           ;
+; RAM_SELECTION~144 ; 2           ;
+; RAM_SELECTION~143 ; 2           ;
+; RAM_SELECTION~142 ; 2           ;
+; RAM_SELECTION~141 ; 2           ;
+; RAM_SELECTION~140 ; 2           ;
+; RAM_SELECTION~139 ; 2           ;
+; RAM_SELECTION~138 ; 2           ;
+; RAM_SELECTION~137 ; 2           ;
+; RAM_SELECTION~136 ; 2           ;
+; RAM_SELECTION~135 ; 2           ;
+; RAM_SELECTION~134 ; 2           ;
+; RAM_SELECTION~133 ; 2           ;
+; RAM_SELECTION~132 ; 2           ;
+; RAM_SELECTION~131 ; 2           ;
+; RAM_SELECTION~130 ; 2           ;
+; RAM_SELECTION~129 ; 2           ;
+; RAM_SELECTION~128 ; 2           ;
+; RAM_SELECTION~127 ; 2           ;
+; RAM_SELECTION~126 ; 2           ;
+; RAM_SELECTION~125 ; 2           ;
+; RAM_SELECTION~124 ; 2           ;
+; RAM_SELECTION~123 ; 2           ;
+; RAM_SELECTION~122 ; 2           ;
+; RAM_SELECTION~121 ; 2           ;
+; RAM_SELECTION~120 ; 2           ;
+; RAM_SELECTION~119 ; 2           ;
+; RAM_SELECTION~118 ; 2           ;
++-------------------+-------------+
+
+
++-------------------------------------------------+
+; Interconnect Usage Summary                      ;
++----------------------------+--------------------+
+; Interconnect Resource Type ; Usage              ;
++----------------------------+--------------------+
+; Output enables             ; 0 / 6 ( 0 % )      ;
+; PIA buffers                ; 206 / 576 ( 36 % ) ;
+; PIAs                       ; 221 / 576 ( 38 % ) ;
++----------------------------+--------------------+
+
+
++------------------------------------------------------------------------------+
+; LAB External Interconnect                                                    ;
++-----------------------------------------------+------------------------------+
+; LAB External Interconnects  (Average = 13.81) ; Number of LABs  (Total = 10) ;
++-----------------------------------------------+------------------------------+
+; 0 - 1                                         ; 6                            ;
+; 2 - 3                                         ; 0                            ;
+; 4 - 5                                         ; 0                            ;
+; 6 - 7                                         ; 0                            ;
+; 8 - 9                                         ; 0                            ;
+; 10 - 11                                       ; 0                            ;
+; 12 - 13                                       ; 0                            ;
+; 14 - 15                                       ; 0                            ;
+; 16 - 17                                       ; 0                            ;
+; 18 - 19                                       ; 0                            ;
+; 20 - 21                                       ; 2                            ;
+; 22 - 23                                       ; 7                            ;
+; 24 - 25                                       ; 1                            ;
++-----------------------------------------------+------------------------------+
+
+
++------------------------------------------------------------------------+
+; LAB Macrocells                                                         ;
++-----------------------------------------+------------------------------+
+; Number of Macrocells  (Average = 10.00) ; Number of LABs  (Total = 10) ;
++-----------------------------------------+------------------------------+
+; 0                                       ; 6                            ;
+; 1                                       ; 0                            ;
+; 2                                       ; 0                            ;
+; 3                                       ; 0                            ;
+; 4                                       ; 0                            ;
+; 5                                       ; 0                            ;
+; 6                                       ; 0                            ;
+; 7                                       ; 0                            ;
+; 8                                       ; 0                            ;
+; 9                                       ; 0                            ;
+; 10                                      ; 0                            ;
+; 11                                      ; 0                            ;
+; 12                                      ; 0                            ;
+; 13                                      ; 0                            ;
+; 14                                      ; 0                            ;
+; 15                                      ; 0                            ;
+; 16                                      ; 10                           ;
++-----------------------------------------+------------------------------+
+
+
++---------------------------------------------------------+
+; Parallel Expander                                       ;
++--------------------------+------------------------------+
+; Parallel Expander Length ; Number of Parallel Expanders ;
++--------------------------+------------------------------+
+; 0                        ; 0                            ;
+; 1                        ; 16                           ;
++--------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                     ;
++-----+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                               ; Output                                ;
++-----+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+
+;  A  ; LC11       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~20                                                                             ; RAM_SELECTION~20, RAM_SELECTION~1476  ;
+;  A  ; LC5        ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~21                                                                             ; RAM_SELECTION~21, RAM_SELECTION~1480  ;
+;  A  ; LC12       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~36                                                                             ; RAM_SELECTION~36, RAM_SELECTION~1385  ;
+;  A  ; LC4        ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~23                                                                             ; RAM_SELECTION~23, RAM_SELECTION~1488  ;
+;  A  ; LC8        ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~37                                                                             ; RAM_SELECTION~37, RAM_SELECTION~1391  ;
+;  A  ; LC14       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~68                                                                             ; RAM_SELECTION~68, RAM_SELECTION~1476  ;
+;  A  ; LC7        ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~39                                                                             ; RAM_SELECTION~39, RAM_SELECTION~1403  ;
+;  A  ; LC15       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~84                                                                             ; RAM_SELECTION~84, RAM_SELECTION~1385  ;
+;  A  ; LC6        ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~69                                                                             ; RAM_SELECTION~69, RAM_SELECTION~1480  ;
+;  A  ; LC9        ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~116                                                                            ; RAM_SELECTION~116, RAM_SELECTION~1385 ;
+;  A  ; LC13       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~52                                                                             ; RAM_SELECTION~52, RAM_SELECTION~1476  ;
+;  A  ; LC1        ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~53                                                                             ; RAM_SELECTION~53, RAM_SELECTION~1480  ;
+;  A  ; LC16       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~100                                                                            ; RAM_SELECTION~100, RAM_SELECTION~1385 ;
+;  A  ; LC2        ; RAM_SELECTION~20, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~52, RAM_SELECTION~68                                                            ; RAM_SELECTION~1385                    ;
+;  A  ; LC10       ; CLOCK, D[0], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~132                                                                            ; RAM_SELECTION~132, RAM_SELECTION~1385 ;
+;  A  ; LC3        ; RAM_SELECTION~1476, RAM_SELECTION~36, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~84, RAM_SELECTION~116, RAM_SELECTION~132, RAM_SELECTION~100 ; Q[0]                                  ;
+;  B  ; LC25       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~22                                                                             ; RAM_SELECTION~22, RAM_SELECTION~1484  ;
+;  B  ; LC31       ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~101                                                                            ; RAM_SELECTION~101, RAM_SELECTION~1391 ;
+;  B  ; LC18       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~118                                                                            ; RAM_SELECTION~118, RAM_SELECTION~1397 ;
+;  B  ; LC17       ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~117                                                                            ; RAM_SELECTION~117, RAM_SELECTION~1391 ;
+;  B  ; LC32       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~102                                                                            ; RAM_SELECTION~102, RAM_SELECTION~1397 ;
+;  B  ; LC19       ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~133                                                                            ; RAM_SELECTION~133, RAM_SELECTION~1391 ;
+;  B  ; LC28       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~70                                                                             ; RAM_SELECTION~70, RAM_SELECTION~1484  ;
+;  B  ; LC29       ; CLOCK, D[1], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~85                                                                             ; RAM_SELECTION~85, RAM_SELECTION~1391  ;
+;  B  ; LC30       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~86                                                                             ; RAM_SELECTION~86, RAM_SELECTION~1397  ;
+;  B  ; LC27       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~54                                                                             ; RAM_SELECTION~54, RAM_SELECTION~1484  ;
+;  B  ; LC24       ; RAM_SELECTION~1480, RAM_SELECTION~37, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~85, RAM_SELECTION~117, RAM_SELECTION~133, RAM_SELECTION~101 ; Q[1]                                  ;
+;  B  ; LC21       ; RAM_SELECTION~1484, RAM_SELECTION~38, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~86, RAM_SELECTION~118, RAM_SELECTION~134, RAM_SELECTION~102 ; Q[2]                                  ;
+;  B  ; LC26       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~38                                                                             ; RAM_SELECTION~38, RAM_SELECTION~1397  ;
+;  B  ; LC23       ; RAM_SELECTION~21, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~53, RAM_SELECTION~69                                                            ; RAM_SELECTION~1391                    ;
+;  B  ; LC20       ; RAM_SELECTION~22, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~54, RAM_SELECTION~70                                                            ; RAM_SELECTION~1397                    ;
+;  B  ; LC22       ; CLOCK, D[2], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~134                                                                            ; RAM_SELECTION~134, RAM_SELECTION~1397 ;
+;  C  ; LC33       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~119                                                                            ; RAM_SELECTION~119, RAM_SELECTION~1403 ;
+;  C  ; LC43       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~72                                                                             ; RAM_SELECTION~72, RAM_SELECTION~1492  ;
+;  C  ; LC42       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~71                                                                             ; RAM_SELECTION~71, RAM_SELECTION~1488  ;
+;  C  ; LC48       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~104                                                                            ; RAM_SELECTION~104, RAM_SELECTION~1409 ;
+;  C  ; LC39       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~136                                                                            ; RAM_SELECTION~136, RAM_SELECTION~1409 ;
+;  C  ; LC38       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~135                                                                            ; RAM_SELECTION~135, RAM_SELECTION~1403 ;
+;  C  ; LC46       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~120                                                                            ; RAM_SELECTION~120, RAM_SELECTION~1409 ;
+;  C  ; LC47       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~103                                                                            ; RAM_SELECTION~103, RAM_SELECTION~1403 ;
+;  C  ; LC45       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~88                                                                             ; RAM_SELECTION~88, RAM_SELECTION~1409  ;
+;  C  ; LC44       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~87                                                                             ; RAM_SELECTION~87, RAM_SELECTION~1403  ;
+;  C  ; LC41       ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~56                                                                             ; RAM_SELECTION~56, RAM_SELECTION~1492  ;
+;  C  ; LC40       ; CLOCK, D[3], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~55                                                                             ; RAM_SELECTION~55, RAM_SELECTION~1488  ;
+;  C  ; LC37       ; RAM_SELECTION~1488, RAM_SELECTION~39, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~87, RAM_SELECTION~119, RAM_SELECTION~135, RAM_SELECTION~103 ; Q[3]                                  ;
+;  C  ; LC35       ; RAM_SELECTION~1492, RAM_SELECTION~40, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~88, RAM_SELECTION~120, RAM_SELECTION~136, RAM_SELECTION~104 ; Q[4]                                  ;
+;  C  ; LC36       ; RAM_SELECTION~23, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~55, RAM_SELECTION~71                                                            ; RAM_SELECTION~1403                    ;
+;  C  ; LC34       ; RAM_SELECTION~24, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~56, RAM_SELECTION~72                                                            ; RAM_SELECTION~1409                    ;
+;  D  ; LC56       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~137                                                                            ; RAM_SELECTION~137, RAM_SELECTION~1415 ;
+;  D  ; LC58       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~25                                                                             ; RAM_SELECTION~25, RAM_SELECTION~1496  ;
+;  D  ; LC61       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~73                                                                             ; RAM_SELECTION~73, RAM_SELECTION~1496  ;
+;  D  ; LC64       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~105                                                                            ; RAM_SELECTION~105, RAM_SELECTION~1415 ;
+;  D  ; LC63       ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~90                                                                             ; RAM_SELECTION~90, RAM_SELECTION~1421  ;
+;  D  ; LC59       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~41                                                                             ; RAM_SELECTION~41, RAM_SELECTION~1415  ;
+;  D  ; LC57       ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~138                                                                            ; RAM_SELECTION~138, RAM_SELECTION~1421 ;
+;  D  ; LC62       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~89                                                                             ; RAM_SELECTION~89, RAM_SELECTION~1415  ;
+;  D  ; LC55       ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~106                                                                            ; RAM_SELECTION~106, RAM_SELECTION~1421 ;
+;  D  ; LC60       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~57                                                                             ; RAM_SELECTION~57, RAM_SELECTION~1496  ;
+;  D  ; LC54       ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~122                                                                            ; RAM_SELECTION~122, RAM_SELECTION~1421 ;
+;  D  ; LC51       ; RAM_SELECTION~1496, RAM_SELECTION~41, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~89, RAM_SELECTION~121, RAM_SELECTION~137, RAM_SELECTION~105 ; Q[5]                                  ;
+;  D  ; LC53       ; RAM_SELECTION~1500, RAM_SELECTION~42, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~90, RAM_SELECTION~122, RAM_SELECTION~138, RAM_SELECTION~106 ; Q[6]                                  ;
+;  D  ; LC49       ; CLOCK, D[5], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~121                                                                            ; RAM_SELECTION~121, RAM_SELECTION~1415 ;
+;  D  ; LC50       ; RAM_SELECTION~25, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~57, RAM_SELECTION~73                                                            ; RAM_SELECTION~1415                    ;
+;  D  ; LC52       ; RAM_SELECTION~26, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~58, RAM_SELECTION~74                                                            ; RAM_SELECTION~1421                    ;
+;  E  ; LC79       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~75                                                                             ; RAM_SELECTION~75, RAM_SELECTION~1504  ;
+;  E  ; LC80       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~91                                                                             ; RAM_SELECTION~91, RAM_SELECTION~1427  ;
+;  E  ; LC65       ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~92                                                                             ; RAM_SELECTION~92, RAM_SELECTION~1433  ;
+;  E  ; LC75       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~27                                                                             ; RAM_SELECTION~27, RAM_SELECTION~1504  ;
+;  E  ; LC74       ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~140                                                                            ; RAM_SELECTION~140, RAM_SELECTION~1433 ;
+;  E  ; LC73       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~139                                                                            ; RAM_SELECTION~139, RAM_SELECTION~1427 ;
+;  E  ; LC70       ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~108                                                                            ; RAM_SELECTION~108, RAM_SELECTION~1433 ;
+;  E  ; LC69       ; RAM_SELECTION~1504, RAM_SELECTION~43, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~91, RAM_SELECTION~123, RAM_SELECTION~139, RAM_SELECTION~107 ; Q[7]                                  ;
+;  E  ; LC67       ; RAM_SELECTION~1508, RAM_SELECTION~44, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~92, RAM_SELECTION~124, RAM_SELECTION~140, RAM_SELECTION~108 ; Q[8]                                  ;
+;  E  ; LC76       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~43                                                                             ; RAM_SELECTION~43, RAM_SELECTION~1427  ;
+;  E  ; LC72       ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~124                                                                            ; RAM_SELECTION~124, RAM_SELECTION~1433 ;
+;  E  ; LC71       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~123                                                                            ; RAM_SELECTION~123, RAM_SELECTION~1427 ;
+;  E  ; LC78       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~59                                                                             ; RAM_SELECTION~59, RAM_SELECTION~1504  ;
+;  E  ; LC77       ; CLOCK, D[7], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~107                                                                            ; RAM_SELECTION~107, RAM_SELECTION~1427 ;
+;  E  ; LC68       ; RAM_SELECTION~27, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~59, RAM_SELECTION~75                                                            ; RAM_SELECTION~1427                    ;
+;  E  ; LC66       ; RAM_SELECTION~28, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~60, RAM_SELECTION~76                                                            ; RAM_SELECTION~1433                    ;
+;  F  ; LC87       ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~94                                                                            ; RAM_SELECTION~94, RAM_SELECTION~1445  ;
+;  F  ; LC93       ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~110                                                                           ; RAM_SELECTION~110, RAM_SELECTION~1445 ;
+;  F  ; LC81       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~77                                                                             ; RAM_SELECTION~77, RAM_SELECTION~1512  ;
+;  F  ; LC83       ; RAM_SELECTION~1512, RAM_SELECTION~45, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~93, RAM_SELECTION~125, RAM_SELECTION~141, RAM_SELECTION~109 ; Q[9]                                  ;
+;  F  ; LC85       ; RAM_SELECTION~1516, RAM_SELECTION~46, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~94, RAM_SELECTION~126, RAM_SELECTION~142, RAM_SELECTION~110 ; Q[10]                                 ;
+;  F  ; LC86       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~93                                                                             ; RAM_SELECTION~93, RAM_SELECTION~1439  ;
+;  F  ; LC90       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~109                                                                            ; RAM_SELECTION~109, RAM_SELECTION~1439 ;
+;  F  ; LC94       ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~142                                                                           ; RAM_SELECTION~142, RAM_SELECTION~1445 ;
+;  F  ; LC96       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~61                                                                             ; RAM_SELECTION~61, RAM_SELECTION~1512  ;
+;  F  ; LC95       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~29                                                                             ; RAM_SELECTION~29, RAM_SELECTION~1512  ;
+;  F  ; LC92       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~141                                                                            ; RAM_SELECTION~141, RAM_SELECTION~1439 ;
+;  F  ; LC89       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~125                                                                            ; RAM_SELECTION~125, RAM_SELECTION~1439 ;
+;  F  ; LC91       ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~126                                                                           ; RAM_SELECTION~126, RAM_SELECTION~1445 ;
+;  F  ; LC88       ; CLOCK, D[9], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~45                                                                             ; RAM_SELECTION~45, RAM_SELECTION~1439  ;
+;  F  ; LC82       ; RAM_SELECTION~29, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~61, RAM_SELECTION~77                                                            ; RAM_SELECTION~1439                    ;
+;  F  ; LC84       ; RAM_SELECTION~30, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~62, RAM_SELECTION~78                                                            ; RAM_SELECTION~1445                    ;
+;  G  ; LC97       ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~127                                                                           ; RAM_SELECTION~127, RAM_SELECTION~1451 ;
+;  G  ; LC102      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~128                                                                           ; RAM_SELECTION~128, RAM_SELECTION~1457 ;
+;  G  ; LC101      ; RAM_SELECTION~1524, RAM_SELECTION~48, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~96, RAM_SELECTION~128, RAM_SELECTION~144, RAM_SELECTION~112 ; Q[12]                                 ;
+;  G  ; LC103      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~143                                                                           ; RAM_SELECTION~143, RAM_SELECTION~1451 ;
+;  G  ; LC104      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~144                                                                           ; RAM_SELECTION~144, RAM_SELECTION~1457 ;
+;  G  ; LC105      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~31                                                                            ; RAM_SELECTION~31, RAM_SELECTION~1520  ;
+;  G  ; LC106      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~47                                                                            ; RAM_SELECTION~47, RAM_SELECTION~1451  ;
+;  G  ; LC107      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~63                                                                            ; RAM_SELECTION~63, RAM_SELECTION~1520  ;
+;  G  ; LC108      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~79                                                                            ; RAM_SELECTION~79, RAM_SELECTION~1520  ;
+;  G  ; LC109      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~95                                                                            ; RAM_SELECTION~95, RAM_SELECTION~1451  ;
+;  G  ; LC110      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~96                                                                            ; RAM_SELECTION~96, RAM_SELECTION~1457  ;
+;  G  ; LC99       ; RAM_SELECTION~1520, RAM_SELECTION~47, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~95, RAM_SELECTION~127, RAM_SELECTION~143, RAM_SELECTION~111 ; Q[11]                                 ;
+;  G  ; LC111      ; CLOCK, D[11], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~111                                                                           ; RAM_SELECTION~111, RAM_SELECTION~1451 ;
+;  G  ; LC112      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~112                                                                           ; RAM_SELECTION~112, RAM_SELECTION~1457 ;
+;  G  ; LC98       ; RAM_SELECTION~31, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~63, RAM_SELECTION~79                                                            ; RAM_SELECTION~1451                    ;
+;  G  ; LC100      ; RAM_SELECTION~32, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~64, RAM_SELECTION~80                                                            ; RAM_SELECTION~1457                    ;
+;  H  ; LC126      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~81                                                                            ; RAM_SELECTION~81, RAM_SELECTION~1528  ;
+;  H  ; LC128      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~98                                                                            ; RAM_SELECTION~98, RAM_SELECTION~1469  ;
+;  H  ; LC117      ; RAM_SELECTION~1528, RAM_SELECTION~49, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~97, RAM_SELECTION~129, RAM_SELECTION~145, RAM_SELECTION~113 ; Q[13]                                 ;
+;  H  ; LC125      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~65                                                                            ; RAM_SELECTION~65, RAM_SELECTION~1528  ;
+;  H  ; LC116      ; RAM_SELECTION~33, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~65, RAM_SELECTION~81                                                            ; RAM_SELECTION~1463                    ;
+;  H  ; LC123      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~33                                                                            ; RAM_SELECTION~33, RAM_SELECTION~1528  ;
+;  H  ; LC115      ; RAM_SELECTION~1532, RAM_SELECTION~50, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~98, RAM_SELECTION~130, RAM_SELECTION~146, RAM_SELECTION~114 ; Q[14]                                 ;
+;  H  ; LC120      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~130                                                                           ; RAM_SELECTION~130, RAM_SELECTION~1469 ;
+;  H  ; LC113      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~113                                                                           ; RAM_SELECTION~113, RAM_SELECTION~1463 ;
+;  H  ; LC118      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~114                                                                           ; RAM_SELECTION~114, RAM_SELECTION~1469 ;
+;  H  ; LC119      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~129                                                                           ; RAM_SELECTION~129, RAM_SELECTION~1463 ;
+;  H  ; LC127      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~97                                                                            ; RAM_SELECTION~97, RAM_SELECTION~1463  ;
+;  H  ; LC124      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~49                                                                            ; RAM_SELECTION~49, RAM_SELECTION~1463  ;
+;  H  ; LC121      ; CLOCK, D[13], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~145                                                                           ; RAM_SELECTION~145, RAM_SELECTION~1463 ;
+;  H  ; LC122      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~146                                                                           ; RAM_SELECTION~146, RAM_SELECTION~1469 ;
+;  H  ; LC114      ; RAM_SELECTION~34, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~66, RAM_SELECTION~82                                                            ; RAM_SELECTION~1469                    ;
+;  I  ; LC135      ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~42                                                                             ; RAM_SELECTION~42, RAM_SELECTION~1421  ;
+;  I  ; LC140      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~35                                                                            ; RAM_SELECTION~35, RAM_SELECTION~1536  ;
+;  I  ; LC129      ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~74                                                                             ; RAM_SELECTION~74, RAM_SELECTION~1500  ;
+;  I  ; LC132      ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~28                                                                             ; RAM_SELECTION~28, RAM_SELECTION~1508  ;
+;  I  ; LC133      ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~26                                                                             ; RAM_SELECTION~26, RAM_SELECTION~1500  ;
+;  I  ; LC139      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~147                                                                           ; RAM_SELECTION~147, RAM_SELECTION~1475 ;
+;  I  ; LC143      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~67                                                                            ; RAM_SELECTION~67, RAM_SELECTION~1536  ;
+;  I  ; LC144      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~99                                                                            ; RAM_SELECTION~99, RAM_SELECTION~1475  ;
+;  I  ; LC142      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~83                                                                            ; RAM_SELECTION~83, RAM_SELECTION~1536  ;
+;  I  ; LC137      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~115                                                                           ; RAM_SELECTION~115, RAM_SELECTION~1475 ;
+;  I  ; LC131      ; RAM_SELECTION~1536, RAM_SELECTION~51, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~99, RAM_SELECTION~131, RAM_SELECTION~147, RAM_SELECTION~115 ; Q[15]                                 ;
+;  I  ; LC136      ; CLOCK, D[6], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~58                                                                             ; RAM_SELECTION~58, RAM_SELECTION~1500  ;
+;  I  ; LC141      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~51                                                                            ; RAM_SELECTION~51, RAM_SELECTION~1475  ;
+;  I  ; LC138      ; CLOCK, D[15], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~131                                                                           ; RAM_SELECTION~131, RAM_SELECTION~1475 ;
+;  I  ; LC134      ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~44                                                                             ; RAM_SELECTION~44, RAM_SELECTION~1433  ;
+;  I  ; LC130      ; RAM_SELECTION~35, ADDRESS[2], ADDRESS[0], ADDRESS[1], RAM_SELECTION~67, RAM_SELECTION~83                                                            ; RAM_SELECTION~1475                    ;
+;  J  ; LC155      ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~62                                                                            ; RAM_SELECTION~62, RAM_SELECTION~1516  ;
+;  J  ; LC157      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~80                                                                            ; RAM_SELECTION~80, RAM_SELECTION~1524  ;
+;  J  ; LC160      ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~60                                                                             ; RAM_SELECTION~60, RAM_SELECTION~1508  ;
+;  J  ; LC149      ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~40                                                                             ; RAM_SELECTION~40, RAM_SELECTION~1409  ;
+;  J  ; LC151      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~64                                                                            ; RAM_SELECTION~64, RAM_SELECTION~1524  ;
+;  J  ; LC154      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~50                                                                            ; RAM_SELECTION~50, RAM_SELECTION~1469  ;
+;  J  ; LC148      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~32                                                                            ; RAM_SELECTION~32, RAM_SELECTION~1524  ;
+;  J  ; LC156      ; CLOCK, D[12], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~48                                                                            ; RAM_SELECTION~48, RAM_SELECTION~1457  ;
+;  J  ; LC158      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~82                                                                            ; RAM_SELECTION~82, RAM_SELECTION~1532  ;
+;  J  ; LC159      ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~46                                                                            ; RAM_SELECTION~46, RAM_SELECTION~1445  ;
+;  J  ; LC153      ; CLOCK, D[4], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~24                                                                             ; RAM_SELECTION~24, RAM_SELECTION~1492  ;
+;  J  ; LC150      ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~30                                                                            ; RAM_SELECTION~30, RAM_SELECTION~1516  ;
+;  J  ; LC145      ; CLOCK, D[10], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~78                                                                            ; RAM_SELECTION~78, RAM_SELECTION~1516  ;
+;  J  ; LC146      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~34                                                                            ; RAM_SELECTION~34, RAM_SELECTION~1532  ;
+;  J  ; LC147      ; CLOCK, D[14], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~66                                                                            ; RAM_SELECTION~66, RAM_SELECTION~1532  ;
+;  J  ; LC152      ; CLOCK, D[8], LOAD, ADDRESS[0], ADDRESS[1], ADDRESS[2], RAM_SELECTION~76                                                                             ; RAM_SELECTION~76, RAM_SELECTION~1508  ;
++-----+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Dec 08 17:15:39 2022
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off RAM_8_BeachWilliam -c RAM_8_BeachWilliam
+Info: Selected device EPM3256AQC208-7 for design "RAM_8_BeachWilliam"
+Info: Quartus II Fitter was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Thu Dec 08 17:15:40 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
